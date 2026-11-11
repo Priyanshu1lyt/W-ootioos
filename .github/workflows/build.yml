@@ -2,13 +2,9 @@ name: Build Easy Potions
 
 on:
   push:
-    branches:
-      - main
-      - master
+    branches: [main, master]
   pull_request:
-    branches:
-      - main
-      - master
+    branches: [main, master]
   workflow_dispatch:
 
 permissions:
@@ -20,7 +16,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout Repository
+      - name: Checkout
         uses: actions/checkout@v4
 
       - name: Setup Java 21
@@ -32,12 +28,12 @@ jobs:
       - name: Setup Gradle
         uses: gradle/actions/setup-gradle@v4
         with:
-          gradle-version: '8.14'
+          gradle-version: '9.2.1'
 
-      - name: Build Easy Potions
-        run: gradle build --no-daemon
+      - name: Build Mod
+        run: gradle clean build --no-daemon
 
-      - name: Upload Mod JAR
+      - name: Upload JAR
         uses: actions/upload-artifact@v4
         with:
           name: Easy-Potions-1.21.11
