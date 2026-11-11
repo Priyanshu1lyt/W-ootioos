@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "id": "easy_potions",
+  "version": "${version}",
+  "name": "Easy Potions",
+  "description": "Simple client-side potion management GUI.",
+  "authors": [
+    "NotHeartYT,Nebrion,Praveen"
+  ],
+  "environment": "client",
+  "entrypoints": {
+    "client": [
+      "com.notheartyt.easypotions.EasyPotionsClient"
+    ]
+  },
+  "depends": {
+    "fabricloader": ">=0.18.0",
+    "minecraft": "1.21.11",
+    "java": ">=21",
+    "fabric-api": "*"
+  }
+}
